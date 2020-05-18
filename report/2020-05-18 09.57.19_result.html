@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>直连天下系统接口自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>直连天下系统接口自动化测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2020-05-18 09:57:19</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:45.194650</p>
+<p class='attribute'><strong>Status:</strong> Error 12</p>
+
+<p class='description'>Implementation Example with:颜蔚</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>add_login_test.AddLoginTest: 登录直连天下后台-test环境</td>
+    <td>8</td>
+    <td>0</td>
+    <td>0</td>
+    <td>8</td>
+    <td><a href="javascript:showClassDetail('c1',8)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_add_login_para_all_null: 所有参数为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\python\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\python\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "D:\python\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001E552A86248&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552A86248&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 26, in test_add_login_para_all_null
+    r = requests.post(self.base_url,data=payload)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552A86248&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\python\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\python\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "D:\python\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001E552A86248&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552A86248&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 26, in test_add_login_para_all_null
+    r = requests.post(self.base_url,data=payload)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552A86248&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_add_login_para_all_null: 所有参数为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        error</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 21, in tearDown
+    print(self.result)
+AttributeError: 'AddLoginTest' object has no attribute 'result'
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 21, in tearDown
+    print(self.result)
+AttributeError: 'AddLoginTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_add_login_para_password_error: 输入的密码不正确</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        error</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\python\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\python\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "D:\python\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD808&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD808&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 42, in test_add_login_para_password_error
+    r = requests.post(self.base_url,data=payload)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD808&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\python\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\python\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "D:\python\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD808&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD808&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 42, in test_add_login_para_password_error
+    r = requests.post(self.base_url,data=payload)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD808&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test_add_login_para_password_error: 输入的密码不正确</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
+        error</a>
+
+    <div id='div_ft1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.4: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 21, in tearDown
+    print(self.result)
+AttributeError: 'AddLoginTest' object has no attribute 'result'
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 21, in tearDown
+    print(self.result)
+AttributeError: 'AddLoginTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='errorCase'><div class='testcase'>test_add_login_para_username_error: 输入的账号不存在</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        error</a>
+
+    <div id='div_ft1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\python\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\python\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "D:\python\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001E552B01F08&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552B01F08&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 33, in test_add_login_para_username_error
+    r=requests.post(self.base_url,data=payload)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552B01F08&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\python\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\python\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "D:\python\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001E552B01F08&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552B01F08&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 33, in test_add_login_para_username_error
+    r=requests.post(self.base_url,data=payload)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552B01F08&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.6' class='none'>
+    <td class='errorCase'><div class='testcase'>test_add_login_para_username_error: 输入的账号不存在</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
+        error</a>
+
+    <div id='div_ft1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.6: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 21, in tearDown
+    print(self.result)
+AttributeError: 'AddLoginTest' object has no attribute 'result'
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 21, in tearDown
+    print(self.result)
+AttributeError: 'AddLoginTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.7' class='none'>
+    <td class='errorCase'><div class='testcase'>test_login_success: 登录成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.7')" >
+        error</a>
+
+    <div id='div_ft1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.7: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\python\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\python\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "D:\python\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001E552B0C608&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552B0C608&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 50, in test_login_success
+    r = requests.post(self.base_url,data=payload)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552B0C608&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\python\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\python\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "D:\python\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001E552B0C608&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552B0C608&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 50, in test_login_success
+    r = requests.post(self.base_url,data=payload)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=8041): Max retries exceeded with url: /admin/base/login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552B0C608&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.8' class='none'>
+    <td class='errorCase'><div class='testcase'>test_login_success: 登录成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.8')" >
+        error</a>
+
+    <div id='div_ft1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.8: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 21, in tearDown
+    print(self.result)
+AttributeError: 'AddLoginTest' object has no attribute 'result'
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\add_login_test.py", line 21, in tearDown
+    print(self.result)
+AttributeError: 'AddLoginTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>unittest.loader._FailedTest</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>order_list_query_test</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: ImportError: Failed to import test module: order_list_query_test
+Traceback (most recent call last):
+  File "D:\python\lib\configparser.py", line 788, in get
+    value = d[option]
+  File "D:\python\lib\collections\__init__.py", line 916, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+  File "D:\python\lib\collections\__init__.py", line 908, in __missing__
+    raise KeyError(key)
+KeyError: 'http_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python\lib\unittest\loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "D:\python\lib\unittest\loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\order_list_query_test.py", line 7, in &lt;module&gt;
+    http_url = ReadConfig().get_url("http_url")
+  File "D:\pycharm\project\直连天下后台管理系统\readConfig.py", line 14, in get_url
+    value = conf.get('URL',name)
+  File "D:\python\lib\configparser.py", line 791, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'http_url' in section: 'URL'
+
+ImportError: Failed to import test module: order_list_query_test
+Traceback (most recent call last):
+  File "D:\python\lib\configparser.py", line 788, in get
+    value = d[option]
+  File "D:\python\lib\collections\__init__.py", line 916, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+  File "D:\python\lib\collections\__init__.py", line 908, in __missing__
+    raise KeyError(key)
+KeyError: 'http_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python\lib\unittest\loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "D:\python\lib\unittest\loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\order_list_query_test.py", line 7, in &lt;module&gt;
+    http_url = ReadConfig().get_url("http_url")
+  File "D:\pycharm\project\直连天下后台管理系统\readConfig.py", line 14, in get_url
+    value = conf.get('URL',name)
+  File "D:\python\lib\configparser.py", line 791, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'http_url' in section: 'URL'
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>place_order_test.PlaceOrderTest: 下游下单</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>3</td>
+    <td><a href="javascript:showClassDetail('c3',3)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_order_repetition: 订单重复</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\place_order_test.py", line 17, in tearDown
+    print(self.result)
+AttributeError: 'PlaceOrderTest' object has no attribute 'result'
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\place_order_test.py", line 17, in tearDown
+    print(self.result)
+AttributeError: 'PlaceOrderTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_place_order: 下单成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.2')" >
+        error</a>
+
+    <div id='div_ft3.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.2: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\python\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\python\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "D:\python\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD048&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=80): Max retries exceeded with url: /recharge/order (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD048&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\place_order_test.py", line 25, in test_place_order
+    r=requests.post(self.http_url,headers=headers,data=payload)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=80): Max retries exceeded with url: /recharge/order (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD048&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\python\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\python\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\python\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "D:\python\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD048&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=80): Max retries exceeded with url: /recharge/order (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD048&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\place_order_test.py", line 25, in test_place_order
+    r=requests.post(self.http_url,headers=headers,data=payload)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\pycharm\project\直连天下后台管理系统\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.dev.1688sup.cn', port=80): Max retries exceeded with url: /recharge/order (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001E552AFD048&gt;: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_place_order: 下单成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.3')" >
+        error</a>
+
+    <div id='div_ft3.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.3: Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\place_order_test.py", line 17, in tearDown
+    print(self.result)
+AttributeError: 'PlaceOrderTest' object has no attribute 'result'
+Traceback (most recent call last):
+  File "D:\pycharm\project\直连天下后台管理系统\test_case\place_order_test.py", line 17, in tearDown
+    print(self.result)
+AttributeError: 'PlaceOrderTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>12</td>
+    <td>0</td>
+    <td>0</td>
+    <td>12</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

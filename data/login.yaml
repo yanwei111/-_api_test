@@ -1,0 +1,7 @@
+#构建参数
+data = {
+    "username":"lsxd",
+    "password":"123456",
+    "isRember":"0"
+    }
+res = requests.post(http_url,data = data)
