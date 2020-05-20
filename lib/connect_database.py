@@ -1,14 +1,31 @@
-import pymysql
-from sshtunnel import SSHTunnelForwarder
+import pymysql.cursors
+from readConfig import ReadConfig
 
-with SSHTunnelForwarder(
-    ("118.178.58.86",22),
-    ssh_password = 'Lsxd3@110624',
-    ssh_username = 'root',
-    remote_bind_address = ('127.0.0.1',3307)) as sever:
+class Conne_DB():
+    def conne_db(self):
+        host = ReadConfig().get_db("host")
+        port = ReadConfig().get_db("port")
+        user = ReadConfig().get_db("user")
+        password = ReadConfig().get_db("password")
+        db = ReadConfig().get_db("db")
+        sql = ReadConfig().get_db("sql")
+        print(host,port,user,password,db,sql)
 
-    db_connect = pymysql.connect(host = '127.0.0.1',
-                                 port = sever.local_bind_port,
-                                 user = 'root',
-                                 password = 'lhb767',
-                                 db = 'new_sys')
+        connect = pymysql.Connect(
+                host=host,
+                port=int(port),
+                user=user,
+                password=password,
+                db=db,
+                charset='utf8',
+                cursorclass=pymysql.cursors.DictCursor
+            )
+
+        cursor = connect.cursor()
+        cursor.execute(sql)
+        data = cursor.fetchone()
+        print(data)
+        print(data["total_consumption"])
+
+if __name__ == "__main__":
+    Conne_DB().conne_db()
