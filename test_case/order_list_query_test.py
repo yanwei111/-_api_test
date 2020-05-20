@@ -4,11 +4,13 @@ from toolclass.login_success import LoginSuccess
 import json
 from readConfig import ReadConfig
 
-http_url = ReadConfig().get_url("http_url")
+test_http_url = ReadConfig().get_url("test_http_url")
+dev_http_url = ReadConfig().get_url("dev_http_url")
+
 class OrderListQueryTest(unittest.TestCase):
     '''查询订单列表'''
     def setUp(self):
-        self.base_url = http_url + "admin/order"
+        self.base_url = test_http_url + "admin/order"
         self.headlist = LoginSuccess().loginsuccess()
 
     def test_order_list_query(self):

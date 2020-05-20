@@ -1,7 +1,22 @@
-#构建参数
-data = {
-    "username":"lsxd",
-    "password":"123456",
-    "isRember":"0"
-    }
-res = requests.post(http_url,data = data)
+#测试账号不能为空
+detail:账号不能为空
+url:http://test.openapi.1688sup.cn/admin/base/login
+method:post
+data:
+  username:
+  password:
+  isRemember:
+check:
+ -code=400
+ -error=账号不能为空
+
+#测试登录成功
+detail:登录成功
+url:http://test.openapi.1688sup.cn/admin/base/login
+method:post
+data:
+  username:lsxd
+  password:123456
+  isRemeber:0
+check:
+ -code=200

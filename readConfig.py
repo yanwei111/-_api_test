@@ -18,6 +18,11 @@ class ReadConfig():
         value = conf.get("EMAIL",name)
         return value
 
+    def get_place_order(self,name):
+        value = conf.get("PLACE_ORDER",name)
+        return value
+
+
 if __name__ == "__main__":
-    ReadConfig().get_mail("subject")
+    ReadConfig().get_place_order("merchantId")
 

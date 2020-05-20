@@ -5,11 +5,12 @@ from lib.runmain import *
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,parentdir)
 
+test_http_url = ReadConfig().get_url("test_http_url")
 dev_http_url = ReadConfig().get_url("dev_http_url")
 
 class LoginSuccess():
     def __init__(self):
-        self.base_url = dev_http_url + "admin/base/login"
+        self.base_url = test_http_url + "admin/base/login"
 
     def loginsuccess(self):
         url = self.base_url + 'admin/base/login'
