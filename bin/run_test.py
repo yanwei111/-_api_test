@@ -4,7 +4,7 @@ import unittest
 import os
 from lib.send_mail import Send_Mail
 
-path = os.path.split(os.path.realpath(__file__))[0]
+path = os.path.dirname(os.path.split(os.path.realpath(__file__))[0])
 #print(path)
 test_dir = os.path.join(path,'test_case')
 

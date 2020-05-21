@@ -1,13 +1,14 @@
 import unittest
 import requests
 import os
-import ddt
+from ddt import ddt,file_data
 path = os.path.join(os.path.join(os.path.dirname(os.path.split(os.path.realpath(__file__))[0]),"data"),"login.yaml")
+print(path)
 
-@ddt.ddt
+@ddt
 class Login(unittest.TestCase):
 
-    @ddt.file_data(path)
+    @file_data(path)
     def test_login(self,**case):
         url = case.get('url')
         method = case.get('method')

@@ -36,7 +36,6 @@ class AddLoginTest(unittest.TestCase):
         '''输入的账号不存在'''
         payload = {"username":"8888","password":"123456","isRemember":0}
         r = requests.post(self.base_url,data=payload)
-        print(payload)
         self.result = r.json()
         self.assertEqual(self.result['code'],400)
         self.assertEqual(self.result['error'],'帐号不存在')

@@ -19,13 +19,13 @@ class PlaceOrderTest(unittest.TestCase):
         time = self.sign[5]
         sign = self.sign[6].upper()
         # sign1 =sign.upper()
-        print(accounType,merchanId,outTradeNo,productId,rechargeAccount,time,sign)
+        # print(accounType,merchanId,outTradeNo,productId,rechargeAccount,time,sign)
         payload = {"merchantId":merchanId,"outTradeNo":outTradeNo,"productId":productId,"rechargeAccount":rechargeAccount,"accountType":accounType,"timeStamp":time,"sign":sign}
         headers = {
             "Content-Type": "application/x-www-form-urlencoded"
         }
         r = requests.post(self.http_url,headers=headers,data=payload)
-        print(r.text)
+        # print(r.text)
         self.result = r.json()
         self.assertEqual(self.result['code'],"2000")
         self.assertEqual(self.result["message"],"ok")

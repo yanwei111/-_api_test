@@ -22,7 +22,6 @@ class OrderListQueryTest(unittest.TestCase):
         r = requests.get(self.base_url,headers=headers,params=payload)
         #print(r.text)
         self.result = json.loads(r.text)
-        print(self.result)
         self.assertEqual(self.result["code"],200)
 
 if __name__ == "__main__":
