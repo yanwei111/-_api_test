@@ -17,6 +17,7 @@ class AddLoginTest(unittest.TestCase):
 
     def setUp(self):
         self.base_url =test_http_url  + "admin/base/login"
+        print(self.base_url)
 
     def tearDown(self):
         print(self.result)
@@ -27,17 +28,18 @@ class AddLoginTest(unittest.TestCase):
         r = requests.post(self.base_url,data=payload)
         self.result = r.json()
         self.assertEqual(self.result['code'],400)
-        self.assertEqual(self.result['error'],'账号不能为空')
+        self.assertEqual(self.result['data'],'')
+        self.assertEqual(self.result['error'],'帐号不能为空')
 
+    @unittest.skip("账号不存在，不执行该条用例")
     def test_add_login_para_username_error(self):
         '''输入的账号不存在'''
         payload = {"username":"8888","password":"123456","isRemember":0}
         r = requests.post(self.base_url,data=payload)
-        print(self.base_url)
         print(payload)
         self.result = r.json()
         self.assertEqual(self.result['code'],400)
-        self.assertEqual(self.result['error'],'账号不存在')
+        self.assertEqual(self.result['error'],'帐号不存在')
 
     def test_add_login_para_password_error(self):
         '''输入的密码不正确'''

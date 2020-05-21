@@ -1,22 +1,10 @@
-#测试账号不能为空
-detail:账号不能为空
-url:http://test.openapi.1688sup.cn/admin/base/login
-method:post
-data:
-  username:
-  password:
-  isRemember:
-check:
- -code=400
- -error=账号不能为空
-
 #测试登录成功
-detail:登录成功
-url:http://test.openapi.1688sup.cn/admin/base/login
-method:post
+detail: 登录成功
+url: http://test.openapi.1688sup.cn/admin/base/login
+method: post
 data:
-  username:lsxd
-  password:123456
-  isRemeber:0
+ username: lsxd
+ password: 123456
+ isRemember: 0
 check:
- -code=200
+ - code=200

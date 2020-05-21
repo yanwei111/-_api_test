@@ -1,30 +1,26 @@
-import time,sys
-#sys.path.append('./test_case')
-from HTMLTestRunner import HTMLTestRunner
+import time
+from BeautifulReport import BeautifulReport
 import unittest
-from lib.send_mail import Send_Mail
 import os
+from lib.send_mail import Send_Mail
 
-#指定测试用例为当前文件下的interface目录
 path = os.path.split(os.path.realpath(__file__))[0]
 #print(path)
 test_dir = os.path.join(path,'test_case')
+
 discover = unittest.defaultTestLoader.discover(test_dir,pattern='*_test.py')
 send = Send_Mail()
 
-#生成报告并发送邮件
-if __name__ == '__main__':
 
-    #now = datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
-    #now = time.strftime("%Y-%m-%d #H:%M:%S", time.localtime(time.time()))  # 获取系统时间
+if __name__ == "__main__":
+    report_dir = 'D:\\pycharm\\project\\直连天下后台管理系统\\report\\'
+    print(report_dir)
+    title = "接口自动化测试报告"
     now = time.strftime('%Y-%m-%d %H.%M.%S',time.localtime(time.time()))
-    filename = 'D:/pycharm/project/直连天下后台管理系统/report/' + now + '_result.html'
-    print(filename)
-    fp = open(filename,'wb')
-    runner = HTMLTestRunner(stream = fp,
-                            title = '直连天下系统接口自动化测试报告',
-                            description = 'Implementation Example with:颜蔚')
-    runner.run(discover)
-    fp.close()
+    runner = BeautifulReport(discover)
+    runner.report(
+        title,
+        filename='%s_接口测试报告'%now,
+        report_dir=report_dir
+    )
     send.send_mail()
-

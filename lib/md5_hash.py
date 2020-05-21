@@ -10,5 +10,5 @@ class Md5_Hash():
 if __name__ == "__main__":
     param = "ttt6767"
     md5 = Md5_Hash().hash_md5(param)
-    print('md5加密前：',  param)
-    print("md5加密后：",  md5)
+    print('md5加密前：',param)
+    print("md5加密后：",md5)

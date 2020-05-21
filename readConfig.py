@@ -22,6 +22,9 @@ class ReadConfig():
         value = conf.get("PLACE_ORDER",name)
         return value
 
+    def get_db(self,name):
+        value = conf.get("DATABASE",name)
+        return value
 
 if __name__ == "__main__":
     ReadConfig().get_place_order("merchantId")
