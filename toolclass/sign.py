@@ -1,5 +1,5 @@
 from lib.md5_hash import Md5_Hash
-from readConfig import ReadConfig
+from conf.readConfig import ReadConfig
 from toolclass import time_samp,random_number
 
 timesamp = time_samp.time_samp()

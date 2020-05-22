@@ -1,8 +1,8 @@
 import unittest
 import requests
 import  os,sys
-from readConfig import ReadConfig
-import json
+from conf.readConfig import ReadConfig
+
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,parentdir)
 

@@ -1,7 +1,7 @@
 #读取配置文件config.ini
 import configparser
 import os
-path = os.path.split(os.path.realpath(__file__))[0]#获取项目绝对路径
+path = os.path.join(os.path.dirname(os.path.split(os.path.realpath(__file__))[0]),"conf")#获取项目绝对路径
 path1 = os.path.dirname(path)
 config_path = os.path.join(path,'config.ini')#在项目路径下加上config.ini的路径
 conf = configparser.ConfigParser()#实例化ConfigParaser类

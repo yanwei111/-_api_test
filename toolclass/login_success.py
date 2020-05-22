@@ -1,6 +1,6 @@
 """工具类，用于被调用"""
 import  os,sys
-from readConfig import ReadConfig
+from conf.readConfig import ReadConfig
 from lib.runmain import *
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,parentdir)

@@ -13,7 +13,17 @@ class RunMain():
         response = None
         if method =='GET':
             response = self.send_get(url,params,headers)
+            print(response.text)
         else:
             response = self.send_post(url,data,headers)
+            print(response.text)
         return response
 
+if __name__ == "__main__":
+    url = "http://test.openapi.1688sup.cn/admin/base/login"
+    payload = {'username': 'lsxd', 'password': '123456', 'isRember': 0}
+    method = "post"
+    headers = {
+        "Content - Type": "application / json"
+    }
+    RunMain().run_main(url=url,data=payload,params=payload,method=method,headers=headers)

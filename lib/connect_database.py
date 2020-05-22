@@ -1,5 +1,5 @@
 import pymysql.cursors
-from readConfig import ReadConfig
+from conf.readConfig import ReadConfig
 
 class Conne_DB():
     def conne_db(self):

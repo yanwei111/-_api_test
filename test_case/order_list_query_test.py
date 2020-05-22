@@ -2,7 +2,7 @@ import unittest
 import requests
 from toolclass.login_success import LoginSuccess
 import json
-from readConfig import ReadConfig
+from conf.readConfig import ReadConfig
 
 test_http_url = ReadConfig().get_url("test_http_url")
 dev_http_url = ReadConfig().get_url("dev_http_url")

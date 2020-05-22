@@ -1,6 +1,6 @@
 import unittest
 from toolclass.sign import Sign
-from readConfig import ReadConfig
+from conf.readConfig import ReadConfig
 import requests
 
 test_xiadan_url = ReadConfig().get_url("test_xiadan_url")

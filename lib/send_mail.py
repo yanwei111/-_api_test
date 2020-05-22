@@ -1,5 +1,5 @@
 import os
-import readConfig
+from conf import readConfig
 import yagmail as yagmail
 
 read_conf = readConfig.ReadConfig()#实例化类
